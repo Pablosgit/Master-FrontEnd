@@ -1,0 +1,43 @@
+@import "./styles.css";
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.exercise p{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+nav ul.act-menu{
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: 0px solid black;
+    justify-content: space-between;
+    background-color: cadetblue;
+}
+
+nav ul.act-menu li{
+    border: 0px solid black;
+    font-size: 80%;
+}
+
+nav ul.act-menu li a{
+    display: block;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul.act-menu li a.active{
+    background-color: darkcyan;
+}
+
+@media screen and (max-width:320px) {
+    nav ul.act-menu{
+        flex-direction: column;
+        text-align: center;
+    }
+}

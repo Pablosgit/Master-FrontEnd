@@ -1,0 +1,12 @@
+html{
+
+    /* Tema A */
+    --color-base: #B39CD0;
+    --color-important:#845EC2;
+    --color-warning: #FBEAFF;
+    --principal-Font:'Courier New', Courier, monospace;
+    --secondary-Font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --box-shadow: -3px 3px 5px 3px rgba(94,94,94,0.73);
+    --border-radius: 0px;
+
+}

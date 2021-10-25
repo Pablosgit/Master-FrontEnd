@@ -1,0 +1,95 @@
+@import "./styles.css";
+
+$name1: lighten;
+$name2: darken;
+$color1: #A91951;
+$color2: #354A70;
+$color3: #4C8B22;
+$numColor: 4;
+$width1: 640px;
+
+.container-color-palette{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    border: 0px solid black;
+    gap: 5px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.container-color-palette > .box{
+    box-sizing: border-box;
+    border: 1px solid black;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 80%;
+    border-radius: 0.3em;
+    color: white;
+}
+
+#container-1 .base-color{
+    background-color: $color1;
+}
+
+#container-2 .base-color{
+    background-color: $color2;
+}
+
+#container-3 .base-color{
+    background-color: $color3;
+}
+
+@for $e from 1 through $numColor {
+    #container-1 .#{$name1}-#{$e}{
+        background-color: lighten($color1, 8% * $e);
+    }
+    #container-1 .#{$name2}-#{$e}{
+        background-color: darken($color1, 5% * $e);
+    }
+}
+
+@for $e from 1 through $numColor {
+    #container-2 .#{$name1}-#{$e}{
+        background-color: lighten($color2, 8% * $e);
+    }
+    #container-2 .#{$name2}-#{$e}{
+        background-color: darken($color2, 5% * $e);
+    }
+}
+
+@for $e from 1 through $numColor {
+    #container-3 .#{$name1}-#{$e}{
+        background-color: lighten($color3, 8% * $e);
+    }
+    #container-3 .#{$name2}-#{$e}{
+        background-color: darken($color3, 5% * $e);
+    }
+}
+
+
+@media screen and (max-width:$width1){
+
+    .container-color-palette{
+        flex-direction: column;
+    }
+
+}
+
+
+
+
+// @for $i from 1 through 3 {
+//     #container-#{$i} .base-color{
+//         background-color: $color1;
+//     }
+//     @for $e from 1 through 4 {
+//         #container-#{$i} .#{$name1}-#{$e}{
+//             background-color: lighten($color1, 5% * $e);
+//         }
+//         #container-#{$i} .#{$name2}-#{$e}{
+//             background-color: darken($color1, 5% * $e);
+//         }
+//     }
+// }

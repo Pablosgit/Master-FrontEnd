@@ -1,0 +1,51 @@
+@import "./styles.css";
+@import "./themeA.css";
+/*@import "./themeB.css";*/
+
+
+.container-theme{
+    display: flex;
+    flex-direction: column;
+    border: 0px solid black;
+    gap: 5px;
+    align-items: center;
+}
+
+.container-theme div.box{
+    width: 100px;
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: var(--border-radius);
+}
+
+.container-theme div.color-base{
+    background-color: var(--color-base);
+}
+
+.container-theme div.color-important{
+    background-color: var(--color-important);
+}
+
+.container-theme div.color-warning{
+    background-color: var(--color-warning);
+}
+
+.container-theme div.principal-Font p{
+    font-family:var(--principal-Font);
+    font-size: 1.2em;
+    margin: 8px 0;
+}
+
+.container-theme div.secondary-Font p{
+    font-family:var(--secondary-Font);
+    font-size: 1em;
+    margin: 8px 0;
+}
+
+.container-theme div.box-shadow{
+    box-shadow: var(--box-shadow);
+}
+
+
+
