@@ -10,16 +10,21 @@ main section.exercise{
 
 .card {
     box-sizing: border-box;
-    border: 0.5px solid grey;
-    background-color:gainsboro;
+    border: 1px solid grey;
+    background-color:rgb(243, 243, 243);
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 130px 1fr 40px 35px;
     width: 200px;
+    border-radius: 2px;
+}
+
+.card .img-card{
+    overflow: hidden;
 }
 
  .card .img-card img{
-    width: 100%;
+    height: 100%;
 }
   
 .card .body-card {
@@ -28,6 +33,7 @@ main section.exercise{
 
 .card .body-card > h3{
     margin: 8px 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .card .body-card > p {
@@ -59,4 +65,8 @@ main section.exercise{
     width: 100%;
     cursor: pointer;
     padding: 5px;
+    background-color: rgb(170, 216, 181);
+    border-radius: 5px;
+    border: 1px solid white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
