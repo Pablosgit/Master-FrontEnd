@@ -1,0 +1,80 @@
+
+$color: purple;
+$sizeFontTitle: 20px;
+$sizeFontText: 12px;
+$sizeFontMessage: 20px;
+$colorFont: white;
+$typeFont1: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+$typeFont2: Verdana, Geneva, Tahoma, sans-serif;
+
+body,html{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    font-family:$typeFont1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 120px 1fr 50px;
+}
+
+header {
+    display: flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    align-items: center;
+    #image-1{
+        text-align: left;
+        img{
+            width: 90px;
+        }
+    }
+    h1{
+       text-align: center; 
+       padding: 0 10px;
+       flex-grow: 2;
+    }
+}
+
+main{
+    font-family: $typeFont2;
+    section{
+        padding: 0 20px;
+    }
+    section.enunciado{
+        padding: 15px;
+        border-radius: 5px;
+        background-color: lightblue;
+        margin: 10px 20px 0;
+    }
+    #message{
+        background-color: $color;
+        font-size: $sizeFontMessage;
+        color: $colorFont;
+        text-align: center;
+        padding: 10px;
+    }
+
+    p{
+        font-size: $sizeFontText;
+    }
+    ul{
+        font-size: $sizeFontText;
+    }
+
+} 
+
+#image-1{
+    text-align: center;
+    margin: 10px;
+}
+
+
+
+footer{
+    text-align: center;
+    img{
+        width: 100px;
+        margin-top: 5px;
+    }
+}
