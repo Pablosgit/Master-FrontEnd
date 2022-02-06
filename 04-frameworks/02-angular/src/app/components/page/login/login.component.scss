@@ -1,0 +1,28 @@
+$color-error: #a94442;
+
+form{
+  text-align: center;
+}
+
+button{
+  margin-top: 15px;
+}
+
+.content-form{
+  padding-top: 10px;
+}
+
+.loading-gif{
+  width: 1.2em;
+  margin-left: 10px;
+}
+
+.message-error.erroradmin{
+  padding: 15px;
+  margin-top: 15px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: $color-error;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}

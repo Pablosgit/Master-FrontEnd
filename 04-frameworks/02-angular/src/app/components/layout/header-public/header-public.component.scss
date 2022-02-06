@@ -1,0 +1,56 @@
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .name-master{
+  padding: 5px 10px 0;
+}
+
+header .name-author{
+  padding-right:20px;
+  margin-bottom: 10px;
+  font-size: 0.85em;
+}
+
+header h1{
+  margin: 0;
+  padding: 5px 10px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header .logo-modulo img {
+  width: 80px;
+  display: block;
+}
+
+
+
+@media screen and (max-width:420px) {
+
+  header h1{
+      font-size: 1em;
+  }
+
+}
+
+@media screen and (max-width:768px) {
+
+  header {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  header .titleModulo, header .name-author {
+      text-align: center;
+      padding: 0;
+  }
+
+  header h1{
+      font-size: 1.4em;
+  }
+
+
+}

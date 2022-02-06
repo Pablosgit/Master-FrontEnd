@@ -1,0 +1,28 @@
+<section class="title">
+  <h2>Login</h2>
+  <p>Login works!</p>
+</section>
+<section class="content-info">
+    <form method="post" #addForm="ngForm">
+      <div class="content-form">
+      <mat-form-field appearance="fill">
+        <mat-label for="username">Username</mat-label>
+        <input matInput type="email" name="username" [(ngModel)]="user.username" required email #username="ngModel"/>
+        <mat-error *ngIf="username.invalid && username.touched">
+          <div *ngIf="username.errors?.['required']">Campo requerido</div>
+          <div *ngIf="username.errors?.['email']">Correo no valido</div>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="content-form">
+      <mat-form-field appearance="fill">
+        <mat-label for="password">Password</mat-label>
+        <input matInput type="password" name="password" [(ngModel)]="user.password" required #password="ngModel">
+        <mat-error *ngIf="password.invalid && password.touched">Campo requerido</mat-error>
+      </mat-form-field>
+    </div>
+      <button mat-raised-button color="primary" [disabled]="addForm.invalid || loading" type="submit" (click)="onlogin()" >Aceptar</button>
+      <img class="loading-gif" *ngIf="loading" src="./assets/login/descarga.gif" />
+      <div id="error" class="message-error erroradmin" *ngIf="messageError">Usuario y contraseña incorrectos</div>
+    </form>
+</section>

@@ -1,0 +1,38 @@
+<section class="title">
+  <h2 appRotate="180">Galery</h2>
+  <p appRotate="180">Galery works!</p>
+</section>
+<section class="content-info">
+  <div class="content-img-selected">
+      <img appRotate="45" step="15" [src]="imgSelected.src" [title]="imgSelected.title" [id]="'img'+ imgSelected.id" [ngStyle]="{'width': zoom + 'px'}" />
+  </div>
+  <div class="content-button-control">
+    <button mat-raised-button color="primary" [disabled]="backDisabled" (click)="onNavImg(false)">
+      <mat-icon>arrow_left</mat-icon>Anterior
+    </button>
+    <button mat-raised-button color="primary" [disabled]="nextDisabled" (click)="onNavImg(true)">
+      Siguiente<mat-icon>arrow_right</mat-icon>
+    </button>
+    <button mat-raised-button color="accent" (click)="onZoomImg(true)">
+      Zoom <mat-icon>zoom_in</mat-icon>
+    </button>
+    <button mat-raised-button color="accent" (click)="onZoomImg(false)">
+      Zoom <mat-icon>zoom_out</mat-icon>
+    </button>
+    <button mat-raised-button color="warn" *ngIf="!activePlay" (click)="onPlayImg()">
+      Play <mat-icon>play_circle_filled</mat-icon>
+    </button>
+    <button mat-raised-button color="warn" *ngIf="activePlay" (click)="onStopImg()">
+      Stop <mat-icon>stop</mat-icon>
+    </button>
+  </div>
+  <div class="content-galery-list">
+    <button mat-icon-button color="primary" [disabled]="backDisabledThumb" (click)="onNavThumbnail(false)">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <img *ngFor="let img of imgGalery | slice:pagRangeA:pagRangeB" [src]="img.src" [title]="img.title" [id]="'thumbnail-Img'+img.id" (click)="onShowImg(img)" [class.selected]="img.selected"  />
+    <button mat-icon-button color="primary" [disabled]="nextDisabledThumb" (click)="onNavThumbnail(true)">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+</section>

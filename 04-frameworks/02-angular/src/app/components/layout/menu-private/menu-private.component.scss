@@ -1,0 +1,40 @@
+nav ul.menu{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-top-width: 2px;
+  border-top-style: solid;
+  justify-content:flex-end;
+}
+
+nav ul.menu li{
+  font-size: 80%;
+}
+
+nav ul.menu li a{
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+
+@media screen and (max-width:420px) {
+
+  nav ul.menu{
+      flex-direction: column;
+      text-align: center;
+  }
+
+}
+
+
+@media screen and (max-width:768px) {
+
+  nav ul.menu{
+      justify-content: center;
+  }
+
+}

@@ -1,0 +1,12 @@
+<app-header-public></app-header-public>
+
+<app-menu-public *ngIf="!getUserIsLogged"></app-menu-public>
+
+<app-menu-private *ngIf="getUserIsLogged"></app-menu-private>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+
+<app-footer></app-footer>

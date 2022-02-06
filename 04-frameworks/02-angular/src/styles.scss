@@ -1,0 +1,130 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$angular-primary: mat.define-palette(mat.$indigo-palette);
+$angular-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$angular-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$angular-theme: mat.define-light-theme((
+  color: (
+    primary: $angular-primary,
+    accent: $angular-accent,
+    warn: $angular-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($angular-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+$color1:#DD0031;
+$color2:#af0029;
+$color3:#C3002F;
+
+body, html { height: 100vh; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body app-root{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 80px 40px 1fr 40px;
+  height: 100vh;
+}
+
+main section.title{
+  padding: 15px 20px;
+  background-color: #E1F1FF;
+  background-image: linear-gradient(to right, #e5e5e5, #ebebeb, #f2f2f2, #f8f8f8, #ffffff);
+}
+
+main section.title h2{
+  margin: 0;
+  font-size: 1.2em;
+}
+
+main section.title p{
+  margin: 10px 0 0;
+}
+
+main section.content-info {
+  padding: 20px;
+  margin: 0 auto;
+}
+
+
+nav ul.menu{
+  border-color: $color2;
+  background-color: $color1;
+}
+
+nav ul.menu li a{
+  color: white;
+}
+
+nav ul.menu .selected{
+  background-color: $color3;
+}
+
+footer{
+  color: white;
+  background-color: $color2;
+}
+
+
+@media screen and (max-width:768px) {
+
+  body app-root{
+    grid-template-columns: auto;
+    grid-template-rows: auto 40px 1fr 40px;
+  }
+
+}
+
+
+@media screen and (max-width:420px) {
+
+  body app-root{
+      grid-template-columns: auto;
+      grid-template-rows: auto auto 1fr 40px;
+  }
+
+  main section.title h2{
+      font-size: 1em;
+  }
+
+  main section.title p{
+      font-size: 0.8em;
+  }
+
+}
+
+@media screen and (max-width:768px) {
+
+  main section.title h2{
+      font-size: 0.9em;
+  }
+
+  main section.title p{
+      font-size: 0.75em;
+  }
+
+
+}

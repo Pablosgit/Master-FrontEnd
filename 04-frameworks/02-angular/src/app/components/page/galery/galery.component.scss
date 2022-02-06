@@ -1,0 +1,50 @@
+
+.mat-icon {
+  width: 20px;
+}
+
+section.content-info > div {
+  margin: 20px 0;
+}
+
+.content-img-selected{
+  text-align: center;
+}
+
+.content-img-selected img{
+  width: 300px;
+  border-radius: 4px;
+}
+
+.content-galery-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-button-control{
+  text-align: center;
+}
+
+button{
+  margin: 4px 4px;
+}
+
+
+.content-galery-list img {
+  margin: 0 2.5px;
+  opacity: 0.4;
+  width: 5em;
+  cursor: pointer;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.content-galery-list img.selected {
+  opacity: 1;
+  border: 2px solid rgb(12, 52, 182);
+}
+
+

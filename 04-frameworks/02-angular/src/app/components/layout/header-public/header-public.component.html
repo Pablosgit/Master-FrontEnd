@@ -1,0 +1,15 @@
+<header>
+      <div class="logo-modulo">
+        <img src="./assets/logo/angular_logo.svg" />
+      </div>
+      <div class="titleModulo">
+          <div class="name-master">Master Front End XI</div>
+          <h1>Laboratorio Módulo 4.2 - Angular</h1>
+      </div>
+      <div id="user-name" class="name-author">
+        <div *ngIf="getUserIsLogged">
+          <span>Hola, {{ username }} </span>
+          <button mat-icon-button color="primary" (click)="onLogout()"><mat-icon>logout</mat-icon></button>
+        </div>
+      </div>
+</header>
