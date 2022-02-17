@@ -8,9 +8,9 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import { ModalComponet } from "./component/modal"
-import logoReact from "./content/React-icon.svg"
-
+import logoReact from "../../../assets/React-icon.svg";
+import Modal from '@material-ui/core/Modal';
+import {ModalBody} from "../../layout/modal-body"
 
 const useStyles = makeStyles({
   imputuser: {
@@ -25,13 +25,17 @@ const useStyles = makeStyles({
 export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
   const [username, setUsername] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  //const [open, setOpen] = React.useState(false);
+  const [password, setPassword] = React.useState(""); 
+  const [open, setOpen] = React.useState(false);
+
   const classes = useStyles();
   const elemento = document.getElementById("root");
   elemento.className = "content-login";
 
-
+  const contentModal = ModalBody();
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const handleNavigation = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -39,8 +43,7 @@ export const LoginPage: React.FC = () => {
     if (username === "admin" && password === "test") {
       navigate("/indice");
     } else {
-      //setOpen(true);
-      //alert("User / password not valid, psst... admin / test");
+      setOpen(true);
     }
 
   };
@@ -79,7 +82,14 @@ export const LoginPage: React.FC = () => {
       </CardContent>
     </form>
     </Card>
-    <ModalComponet />
+    <Modal
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="simple-modal-title"
+      aria-describedby="simple-modal-description"
+    >
+      {contentModal}
+    </Modal>
     </Box>
   );
 };

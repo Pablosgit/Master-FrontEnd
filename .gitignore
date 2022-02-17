@@ -1,4 +1,6 @@
 */*/.cache
 */*/dist
 */*/node_modules
-*/01-react1
+*/*/*/.cache
+*/*/*/dist
+*/*/*/node_modules

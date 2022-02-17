@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM  from "react-dom";
 import "./style.css";
+require('dotenv').config();
 
-//const baseURL = process.env.API_BASE_URL;
-
-//console.log("Api base:" + baseURL);
+const baseURL = process.env.API_BASE_URL;
+console.log("Api base:" + baseURL);
 
 ReactDOM.render(
     <div>

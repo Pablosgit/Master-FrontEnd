@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, generatePath} from "react-router-dom";
-import {MemberEntityRyM} from "./component/model";
+import {MemberEntityRyM} from "../../../model/model";
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import Avatar from '@material-ui/core/Avatar';

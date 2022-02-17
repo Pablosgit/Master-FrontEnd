@@ -71,10 +71,35 @@ header h1{
 }
 
 
+input#standard-basic-size-small{
+    padding: 9px;
+    background-color: white;
+}
+ button.button-search {
+     margin-left: 10px;
+ }
 
-.card-act{
+ h2.title-page{
+     text-align: center;
+ }
+
+
+ .content-img-character img{
+     border-radius: 5px;
+ }
+
+
+.card-act, .card-detail{
     width: 250px;
     margin: 10px;
+}
+
+.card-act .content-img {
+    height: 140px;
+}
+
+.card-detail .content-img{
+    height: 240px;
 }
 
 table {
@@ -99,6 +124,10 @@ footer p{
 }
 
 
+table thead{
+    background-color: rgb(224, 224, 224);
+}
+
 @media screen and (max-width:420px) {
 
     body{
@@ -116,6 +145,7 @@ footer p{
         font-size: 1em;
     }
 
+   
 
 }
 
@@ -140,5 +170,39 @@ footer p{
         justify-content: center;
     }
 
+
+    #root .main-content {
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #root .main-content .card-act, #root .main-content .card-detail  {
+        width: 100%;
+    }
+
+    #root .main-content .card-act > button {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #root .main-content .card-act .content-img {
+        width: 170px;
+    }
+
+
+    #root .main-content .card-detail {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content:center;
+    }
+
+    #root .main-content .card-detail .content-img {
+        width: 180px;
+        height: 180px;
+    }
 
 }

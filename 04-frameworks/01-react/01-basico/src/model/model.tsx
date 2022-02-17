@@ -29,3 +29,9 @@ export interface MemberDetailEntity {
     gender: string;
     image: string;
   }
+
+
+  export interface userContext {
+    inputFindValue: string,
+    setInputFindValue: (value:string) => void,
+}
