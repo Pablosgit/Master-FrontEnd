@@ -1,0 +1,265 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+}
+
+
+#root {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 85px 35px 1fr 35px;
+    height: 100vh;
+}
+
+h2 {
+    margin: 10px;
+    text-align: center;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header .header-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+}
+
+header .name-master{
+    padding: 5px 10px 0;
+}
+
+header .name-author{
+    padding-right:10px;
+}
+
+header h1{
+    margin: 0;
+    padding: 5px 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+
+#root .main-content{
+    border-top: 2px solid #00a6d4;
+    background-color: #61dafb;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items:flex-start;
+}
+
+#root .content-menu-cat{
+    width: 100%;
+    background-color: #1976d2;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+
+#root .content-menu-user{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    justify-content: end;
+    padding: 0 20px;
+}
+
+#root .content-category .card-cat{
+   margin: 5px;
+}
+
+#root .content-category .card-cat .content-img{
+    height: 150px;
+ }
+
+#root .content-category, #root .content-cat{
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+
+
+#root .content-cart{
+    width: 180px;
+    height: calc(100% - 10px);
+    text-align: center;
+    border-radius: 0;
+    background-color: white;
+    padding: 0 0 10px;
+}
+
+
+#root .content-cart h2{
+    text-align: center;
+}
+
+#root .content-cart .button-delete-cart{
+    font-size: 0.65em;
+}
+
+
+.content-iten-images{
+    margin: 5px;
+    cursor: pointer;
+}
+
+.content-img{
+    flex-wrap: wrap;
+}
+
+.content-img .MuiPaper-root{
+    width: 120px;
+}
+
+.content-img .MuiCardContent-root{
+    padding: 8px;
+    padding-bottom: 0;
+}
+
+.content-img .MuiCardActions-root{
+    padding: 5px;
+    justify-content: center;
+}
+
+.content-img .MuiCardActions-root .MuiCheckbox-root{
+    padding: 2px;
+}
+
+
+.content-cart .MuiAvatar-root{
+    width: 30px;
+    height: 30px;
+}
+
+.content-cart .MuiListItemAvatar-root {
+    min-width: 40px;
+}
+
+
+.content-cart .content-iten-images {
+    width: 100px;
+}
+
+.content-cart .MuiListItemText-root .MuiTypography-root{
+    font-size: 0.75em;
+}
+
+.content-cart .MuiListItemText-root{
+    margin: 0;
+}
+
+.content-cart .MuiSvgIcon-root{
+    width: 0.8em;
+    height: 0.8em;
+}
+
+footer {
+    padding: 10px;
+    text-align: center;
+    background-color: #00a6d4;
+    color: white;
+}
+
+footer p{
+    margin: 0px;
+    font-size: 80%;
+}
+
+
+table thead{
+    background-color: rgb(224, 224, 224);
+}
+
+@media screen and (max-width:420px) {
+
+    body{
+        grid-template-columns: auto;
+        grid-template-rows: auto 1fr 35px;
+    }
+
+    header h1{
+        font-size: 1em;
+    }
+
+   
+
+}
+
+
+@media screen and (max-width:768px) {
+
+    header .header-top{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .header-top .titleModulo {
+        text-align: center;
+    }
+
+    header h1{
+        font-size: 1.4em;
+    }
+
+    #root .main-content {
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+
+    #root .main-content .card-act, #root .main-content .card-detail  {
+        width: 100%;
+    }
+
+    #root .main-content .card-act > button {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #root .main-content .card-act .content-img {
+        width: 170px;
+    }
+
+
+    #root .main-content .card-detail {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content:center;
+    }
+
+    #root .main-content .card-detail .content-img {
+        width: 180px;
+        height: 180px;
+    }
+
+    #root .content-cart{
+        width: 100%;
+        height: calc(100% - 20px);
+        text-align: center;
+        border-radius: 0;
+        background-color: white;
+        padding: 10px 0;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+}

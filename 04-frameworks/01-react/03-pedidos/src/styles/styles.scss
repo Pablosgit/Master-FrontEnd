@@ -1,0 +1,143 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+}
+
+
+#root {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 85px 1fr 35px;
+    height: 100vh;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header .header-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+}
+
+header .name-master{
+    padding: 5px 10px 0;
+}
+
+header .name-author{
+    padding-right:10px;
+}
+
+header h1{
+    margin: 0;
+    padding: 5px 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#root .main-content{
+    border-top: 2px solid #00a6d4;
+    background-color: #61dafb;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 0 10px 20px;
+}
+
+#root .main-content form.content-cabecera-orders{
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.content-button{
+    margin-bottom: 20px;
+}
+
+#root .main-content form.content-cabecera-orders .MuiFormControl-root{
+    margin: 10px;
+}
+
+.content-button-form{
+    text-align: right;
+}
+
+footer {
+    padding: 10px;
+    text-align: center;
+    background-color: #00a6d4;
+    color: white;
+}
+
+footer p{
+    margin: 0px;
+    font-size: 80%;
+}
+
+
+.material-icons.done{
+    color: green;
+}
+
+.material-icons.clear{
+    color: red;
+}
+
+table thead{
+    background-color: rgb(224, 224, 224);
+}
+
+table .content-item-edit{
+    cursor: pointer;
+}
+
+table .content-item-edit:hover{
+    opacity: 0.75;
+}
+
+@media screen and (max-width:420px) {
+
+    body{
+        grid-template-columns: auto;
+        grid-template-rows: auto 1fr 35px;
+    }
+
+    header h1{
+        font-size: 1em;
+    }
+
+   
+
+}
+
+
+@media screen and (max-width:768px) {
+
+    header .header-top{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .header-top .titleModulo {
+        text-align: center;
+    }
+
+    header h1{
+        font-size: 1.4em;
+    }
+
+    #root .main-content {
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+
+
+}
