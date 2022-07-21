@@ -2,46 +2,41 @@
   <div>
     <h2 class="title-page">Hello from List page</h2>
     <div class="filter-search">
-      <v-text-field label="Regular" v-model="filter.value"></v-text-field>
-      <v-btn elevation="2" small @click="findCompany(filter.value)">
-        Search
-      </v-btn>
-      <p><cite>Search by company: Lemoncode, Microsoft, apple...</cite></p>
+      <v-container>
+        <v-row>
+          <v-col>
+            <v-text-field solo v-model="filter.value"></v-text-field>
+          </v-col>
+          <v-col>
+            <v-btn elevation="2" small @click="findCompany(filter.value)">
+              Search
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-container>
     </div>
-    <v-simple-table>
+    <p><cite>Search by company: Lemoncode, Microsoft, apple...</cite></p>
+    <v-simple-table class="member-list">
       <template v-slot:default>
-        <thead>
-          <tr>
-            <th class="text-left">Avatar</th>
-            <th class="text-left">Name</th>
-          </tr>
-        </thead>
         <tbody>
-          <tr
-            v-for="members in list"
-            :key="members.id"
-            :to="`/detail?login=${members.login}`"
-          >
+          <tr v-for="members in list" :key="members.id">
             <td>
-              <v-avatar>
-                <img :src="`${members.avatar_url}`" alt="Avatar" />
-              </v-avatar>
+              <NuxtLink :to="`/detail?login=${members.login}`">
+                <v-avatar class="img-avatar">
+                  <img :src="`${members.avatar_url}`" alt="Avatar" />
+                </v-avatar>
+                {{ members.login }}
+              </NuxtLink>
             </td>
-            <td>{{ members.login }}</td>
           </tr>
         </tbody>
       </template>
-      <v-pagination v-model="page" :length="pageCount"></v-pagination>
     </v-simple-table>
-
-    <!-- <ul class="menber-list">
-      <li v-for="members in list" :key="members.id">
-        <NuxtLink :to="`/detail?login=${members.login}`">
-          <img class="img-avatar" :src="`${members.avatar_url}`" alt="" />
-          <span> {{ members.login }}</span>
-        </NuxtLink>
-      </li>
-    </ul> -->
+    <v-pagination
+      v-model="pageIni"
+      :length="pageCount"
+      @input="handlePageChange"
+    ></v-pagination>
   </div>
 </template>
 
@@ -51,9 +46,16 @@ import { mapActions, mapGetters } from 'vuex'
 import { useMembersApi } from '@/composables/membersApi'
 import { Member } from '@/types'
 export default {
-  data: () => ({
-    list: {} as Member,
-  }),
+  data() {
+    return {
+      list: {} as Member,
+      listPage: {} as Member,
+      pageIni: 1,
+      page: 0,
+      pageCount: 0,
+      itemsPerPage: 5,
+    }
+  },
   computed: {
     ...mapGetters({
       getFilterString: 'getFilterString',
@@ -63,24 +65,41 @@ export default {
     ...mapActions(['filterCompany']),
     async findCompany(company: string) {
       this.filterCompany(company)
-      this.list = await useMembersApi(company)
+      this.page = 0
+      this.pageIni = 1
+      this.list = await this.calcPagList(company)
+      this.pageCount = this.calcPagination()
+    },
+    async handlePageChange(value) {
+      this.page = value - 1
+      this.list = await this.calcPagList(this.filter.value)
+    },
+    async calcPagList(param) {
+      this.listPage = await useMembersApi(param)
+      return this.listPage.slice(
+        this.page * this.itemsPerPage,
+        this.page * this.itemsPerPage + this.itemsPerPage
+      )
+    },
+    calcPagination() {
+      const pageNum = this.listPage.length / this.itemsPerPage
+      return Number.isInteger(pageNum) ? pageNum : Math.trunc(pageNum) + 1
     },
   },
   async created() {
     const filteredCompany: Ref<string> = ref(this.getFilterString)
     this.filter = filteredCompany
-    this.list = await useMembersApi(this.filter.value)
+    this.list = await this.calcPagList(this.filter.value)
+    this.pageCount = this.calcPagination()
   },
 }
 </script>
 
 <style lang="scss" scoped>
 .img-avatar {
-  width: 50px;
-  border-radius: 50%;
   margin-right: 20px;
 }
-.filter-search input {
-  margin-right: 10px;
+.v-pagination__item--active {
+  background-color: #34495e;
 }
 </style>

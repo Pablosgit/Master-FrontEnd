@@ -20,11 +20,9 @@
         </v-list-item-avatar>
       </v-list-item>
       <v-card-actions>
-        <v-btn outlined rounded text>
-          <a target="_black" :href="`${member.html_url}`">
-            <strong>Github profile</strong>
-          </a>
-        </v-btn>
+        <a target="_black" :href="`${member.html_url}`">
+          <strong>Github profile</strong>
+        </a>
       </v-card-actions>
     </v-card>
   </div>

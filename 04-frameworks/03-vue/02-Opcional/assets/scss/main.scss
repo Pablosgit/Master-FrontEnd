@@ -1,14 +1,17 @@
+p,
+h2,
+h3,
+table {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   height: 100vh;
-}
-
-.menber-list a {
-  text-decoration: none;
-  color: currentColor;
 }
 
 ul {
@@ -27,13 +30,21 @@ ul.menber-list li {
   background-color: white;
 }
 
-ul.menber-list li a {
+table td,
+table tr {
+  margin: 0;
+  padding: 0;
+}
+
+table td a {
   margin: 5px;
   padding: 10px;
   display: flex;
   align-items: center;
   flex-direction: row;
   color: #2c3e50;
+  text-decoration: none;
+  color: currentColor;
 }
 
 #app {
@@ -63,6 +74,14 @@ ul.menber-list li a {
   align-items: center;
   flex-direction: row;
   color: #2c3e50;
+}
+
+.v-text-field {
+  margin-right: 10px;
+}
+
+.v-pagination__item--active {
+  background-color: #34495e !important;
 }
 
 @media screen and (max-width: 420px) {

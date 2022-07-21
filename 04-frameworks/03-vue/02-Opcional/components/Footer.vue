@@ -1,7 +1,7 @@
 <template>
-  <v-footer>
+  <footer>
     <p>Laboratorio Módulo 4.3 - Vue</p>
-  </v-footer>
+  </footer>
 </template>
 
 <script lang="ts">
@@ -24,9 +24,5 @@ footer {
 footer p {
   margin: 0px;
   font-size: 80%;
-}
-
-table thead {
-  background-color: rgb(224, 224, 224);
 }
 </style>
